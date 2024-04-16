@@ -4,10 +4,12 @@
   --accent-color: #e44848;
   --accent-hover: #d84343;
   --white: #ffffff;
+  --border-color: rgba(16, 24, 40, 0.2);
+
   /* --button-transparent: rgba(71, 84, 103, 0.2); */
   --input-color: #f7f7f7;
 
-  --block-feature: #f2f4f7;
+  --light-grey: #f2f4f7;
   --rating: #ffc531;
 
   --label: rgba(16, 24, 40, 0.6);

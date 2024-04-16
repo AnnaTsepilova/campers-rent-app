@@ -1,11 +1,21 @@
-import AdvertItem from 'components/AdvertItem/AdvertItem';
+import AdvertsList from 'components/AdvertsList/AdvertsList';
+import Loader from 'components/Loader/Loader';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAdverts } from '../../redux/operations';
+import { selectError, selectIsLoading } from '../../redux/selectors';
 
 const Catalog = () => {
-  return (
-    <main>
-      <AdvertItem />
-    </main>
-  );
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(getAdverts());
+  }, [dispatch]);
+
+  //return <main>{isLoading && !error ? <Loader /> : <AdvertsList />}</main>;
+  return <AdvertsList />;
 };
 
 export default Catalog;
