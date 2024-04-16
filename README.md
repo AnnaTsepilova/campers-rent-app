@@ -33,13 +33,9 @@ React course homework project template
 # React homework template
 >>>>>>> c18dae4 (change title)
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
-
 ## Створення репозиторію за шаблоном
 
+<<<<<<< HEAD
 Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
 свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
 `«Create a new repository»`, як показано на зображенні.
@@ -223,3 +219,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
    відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
    скрипта буде вказано в чому проблема.
 >>>>>>> 2d8d218 (Update README.md)
+=======
+Використовуй цей репозиторій організації GoIT як шаблон для створення
+репозиторію свого проєкта. Для цього натисни на кнопку `«Use this template»` і
+вибери опцію `«Create a new repository»`, як показано на зображенні.
+>>>>>>> 636ef5e (added first components)
