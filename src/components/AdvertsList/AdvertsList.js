@@ -28,14 +28,14 @@ const AdvertsList = () => {
   }
 
   return (
-    <>
+    <div>
       <ul className={css.AdvertsList}>
         {advertsLimited?.map(advert => {
           return <AdvertItem key={advert._id} advert={advert} />;
         })}
       </ul>
       {showLoadMore && <LoadMoreBtn onClick={handleClickLoadMore} />}
-    </>
+    </div>
   );
 };
 

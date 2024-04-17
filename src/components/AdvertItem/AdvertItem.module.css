@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  width: 840px;
+  width: 100%;
   height: 310px;
   padding: 24px;
 
@@ -56,6 +56,10 @@
   gap: 10px;
 }
 
+.price_heart_wrapper svg {
+  fill: currentColor;
+}
+
 .advert_subtitle {
   display: flex;
   justify-content: flex-start;
@@ -75,11 +79,19 @@
   text-decoration: underline;
 }
 
+.advert_reviews svg {
+  fill: var(--rating);
+}
+
 .advert_location {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
+}
+
+.advert_location svg {
+  fill: currentColor;
 }
 
 .descr_text {

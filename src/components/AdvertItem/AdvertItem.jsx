@@ -4,6 +4,7 @@ import { Button } from 'components/Button/Button';
 import { CutText, CutTitle } from 'components/CutText/CutText';
 
 const AdvertItem = ({ advert }) => {
+  console.log('advert :>> ', advert);
   return (
     <li className={css.advertItem_container}>
       <img src={advert.gallery[0]} alt={advert.name} width={290} />
