@@ -1,10 +1,9 @@
 import css from './AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
 import { Button } from 'components/Button/Button';
+import { CutText, CutTitle } from 'components/CutText/CutText';
 
 const AdvertItem = ({ advert }) => {
-  if (!advert) return;
-  console.log('AdvertItem :>> ', advert.name);
   return (
     <li className={css.advertItem_container}>
       <img src={advert.gallery[0]} alt={advert.name} width={290} />
@@ -12,7 +11,7 @@ const AdvertItem = ({ advert }) => {
       <div className={css.advert_info}>
         <div>
           <div className={css.advert_title}>
-            <h3>{advert.name}</h3>
+            <CutTitle>{advert.name}</CutTitle>
             <div className={css.price_heart_wrapper}>
               <p>&#8364;{advert.price}</p>
               <svg width={24} height={24}>
@@ -37,7 +36,7 @@ const AdvertItem = ({ advert }) => {
             </div>
           </div>
         </div>
-        <p className={css.descr_text}>{advert.description}</p>
+        <CutText>{advert.description}</CutText>
         <ul className={css.categories_list}>
           <li className={css.categories_item}>
             <svg width={20} height={20}>

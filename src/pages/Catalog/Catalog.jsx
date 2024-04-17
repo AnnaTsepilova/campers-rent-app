@@ -14,8 +14,7 @@ const Catalog = () => {
     dispatch(getAdverts());
   }, [dispatch]);
 
-  //return <main>{isLoading && !error ? <Loader /> : <AdvertsList />}</main>;
-  return <AdvertsList />;
+  return <main>{isLoading && !error ? <Loader /> : <AdvertsList />}</main>;
 };
 
 export default Catalog;
