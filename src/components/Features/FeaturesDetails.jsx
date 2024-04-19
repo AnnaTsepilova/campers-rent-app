@@ -16,7 +16,7 @@ const FeatureItem = ({ advert }) => {
         }
         if (value) {
           return (
-            <li className={css.features_item}>
+            <li className={css.features_item} key={key}>
               <svg width={20} height={20}>
                 <use href={`${svgSprite}#${key}`}></use>
               </svg>

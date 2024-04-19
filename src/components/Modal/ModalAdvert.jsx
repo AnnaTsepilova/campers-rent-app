@@ -1,10 +1,9 @@
-// import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Modal from './Modal';
 import css from './ModalAdvert.module.css';
 import style from '../AdvertItem/AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
-import { NavLink } from 'react-router-dom';
 
 const ModalAdvert = ({ advert, onModalClose }) => {
   return (
@@ -48,33 +47,17 @@ const ModalAdvert = ({ advert, onModalClose }) => {
             </div>
           </div>
           <ul className={style.advertItem_gallery}>
-            <li>
-              <img
-                className={style.advertItem_img}
-                src={advert.gallery[0]}
-                alt={advert.name}
-                width={290}
-                height={310}
-              />
-            </li>
-            <li>
-              <img
-                className={style.advertItem_img}
-                src={advert.gallery[1]}
-                alt={advert.name}
-                width={290}
-                height={310}
-              />
-            </li>
-            <li>
-              <img
-                className={style.advertItem_img}
-                src={advert.gallery[2]}
-                alt={advert.name}
-                width={290}
-                height={310}
-              />
-            </li>
+            {advert.gallery.map(imgUrl => (
+              <li key={imgUrl}>
+                <img
+                  className={style.advertItem_img}
+                  src={imgUrl}
+                  alt={advert.name}
+                  width={290}
+                  height={310}
+                />
+              </li>
+            ))}
           </ul>
           <p className={style.modal_descr}>{advert.description}</p>
         </div>

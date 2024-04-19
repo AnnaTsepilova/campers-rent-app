@@ -1,12 +1,12 @@
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import AdvertItem from 'components/AdvertItem/AdvertItem';
 import { LoadMoreBtn } from 'components/Button/Button';
+import ModalAdvert from 'components/Modal/ModalAdvert';
 import css from './AdvertsList.module.css';
 
 import { selectAdverts } from '../../redux/selectors';
-import { useState, useEffect } from 'react';
-import ModalAdvert from 'components/Modal/ModalAdvert';
 
 const AdvertsList = () => {
   const allAdverts = useSelector(selectAdverts);
