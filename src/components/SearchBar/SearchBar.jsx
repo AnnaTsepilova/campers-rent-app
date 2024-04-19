@@ -19,6 +19,7 @@ const SearchBar = () => {
               className={css.location_input}
               type="text"
               name="location"
+              id="location"
               autoComplete="off"
               placeholder="City"
             />

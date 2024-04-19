@@ -28,8 +28,8 @@ const AdvertsList = () => {
   }
 
   return (
-    <div>
-      <ul className={css.AdvertsList}>
+    <div className={css.advertsList_wrapper}>
+      <ul className={css.advertsList}>
         {advertsLimited?.map(advert => {
           return <AdvertItem key={advert._id} advert={advert} />;
         })}

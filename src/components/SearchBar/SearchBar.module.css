@@ -1,16 +1,13 @@
 .searchBar_wrapper {
-  display: block;
   width: 360px;
+  flex-shrink: 0;
 }
 
 .location_wrapper {
-  width: 100%;
   margin-bottom: 32px;
 }
 
 .label {
-  width: 100%;
-
   font-weight: 500;
   color: var(--label);
 }
@@ -30,7 +27,7 @@
 }
 
 .location_input {
-  width: 360px;
+  width: 298px;
 
   padding: 18px 18px 18px 44px;
 

@@ -6,7 +6,6 @@ import { CutText, CutTitle } from 'components/CutText/CutText';
 import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 
 const AdvertItem = ({ advert }) => {
-  console.log('advert :>> ', advert);
   return (
     <li className={css.advertItem_container}>
       <img src={advert.gallery[0]} alt={advert.name} width={290} />

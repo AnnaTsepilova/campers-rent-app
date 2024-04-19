@@ -1,0 +1,31 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* z-index: 9999; */
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-bg-color);
+  transition: opacity var(--transition-function),
+    visibility var(--transition-function);
+  overflow: scroll;
+}
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 982px;
+  min-height: 640px;
+  height: auto;
+  padding: 40px;
+
+  border-radius: 20px;
+  background: var(--white);
+}

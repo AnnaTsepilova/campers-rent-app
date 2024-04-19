@@ -6,14 +6,16 @@
   width: 166px;
   height: 56px;
 
-  border-radius: 200px;
-  background: var(--accent-color);
+  padding: 16px;
 
-  color: var(--white);
+  border-radius: 200px;
+  background-color: var(--accent-color);
+
   font-weight: 500;
   letter-spacing: -0.08px;
+  color: var(--white);
 
-  transition: background var(--transition-function);
+  transition: background-color var(--transition-function);
 }
 
 .search_btn {
@@ -24,25 +26,23 @@
   width: 173px;
   height: 56px;
 
-  border-radius: 200px;
-  background: var(--accent-color);
-  border: transparent;
+  padding: 16px;
 
-  font-family: Inter;
-  font-size: 16px;
+  border-radius: 200px;
+  background-color: var(--accent-color);
+
   font-weight: 500;
-  line-height: 1.5;
   letter-spacing: -0.08px;
   color: var(--white);
 
-  transition: background var(--transition-function);
+  transition: background-color var(--transition-function);
 }
 
 .primary_btn:hover,
 .primary_btn:focus,
 .search_btn:hover,
 .search_btn:focus {
-  background: var(--accent-hover);
+  background-color: var(--accent-hover);
 }
 
 .loadMore_btn {
@@ -52,18 +52,12 @@
 
   padding: 16px 32px;
 
-  width: 150px;
-  height: 56px;
-
   border-radius: 200px;
   background-color: transparent;
   border: 1px solid var(--border-color);
 
-  font-family: Inter;
-  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.08px;
-  line-height: 1.5;
   color: var(--primary-black);
 
   text-decoration: none;

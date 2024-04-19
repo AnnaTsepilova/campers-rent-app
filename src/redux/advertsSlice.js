@@ -1,25 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAdverts } from '../redux/operations';
-import { handleFulfilled, handlePending, handleRejected } from './handlers';
+import { handleFulfilled, handlePending, handleRejected } from './handlers.js';
+
+const INITIAL_STATE = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
 
 export const advertsSlice = createSlice({
   name: 'adverts',
-  initialState: { items: [], isLoading: false, error: null },
+  initialState: INITIAL_STATE,
   extraReducers: builder => {
     builder
       .addCase(getAdverts.fulfilled, (state, action) => {
         state.items = action.payload;
       })
 
-      .addMatcher(action => {
-        action.type.endsWith('pending');
-      }, handlePending)
-      .addMatcher(action => {
-        action.type.endsWith('fulfilled');
-      }, handleFulfilled)
-      .addMatcher(action => {
-        action.type.endsWith('rejected');
-      }, handleRejected);
+      .addMatcher(action => action.type.endsWith('pending'), handlePending)
+      .addMatcher(action => action.type.endsWith('fulfilled'), handleFulfilled)
+      .addMatcher(action => action.type.endsWith('rejected'), handleRejected);
   },
 });
 
