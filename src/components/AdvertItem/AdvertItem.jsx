@@ -5,7 +5,7 @@ import { Button } from 'components/Button/Button';
 import { CutText, CutTitle } from 'components/CutText/CutText';
 import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 
-const AdvertItem = ({ advert }) => {
+const AdvertItem = ({ advert, toggleShowModal }) => {
   return (
     <li className={css.advertItem_container}>
       <img
@@ -13,6 +13,7 @@ const AdvertItem = ({ advert }) => {
         src={advert.gallery[0]}
         alt={advert.name}
         width={290}
+        height={310}
       />
 
       <div className={css.advert_info}>
@@ -47,7 +48,13 @@ const AdvertItem = ({ advert }) => {
         <ul className={css.features_list}>
           <FeaturesInAdvertItem advert={advert} />
         </ul>
-        <Button>Show more</Button>
+        <Button
+          onClick={() => {
+            toggleShowModal(advert);
+          }}
+        >
+          Show more
+        </Button>
       </div>
     </li>
   );

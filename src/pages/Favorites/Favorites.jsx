@@ -1,9 +1,7 @@
-import Modal from 'components/Modal/Modal';
-
 const Favorites = () => {
   return (
     <main>
-      <Modal />
+      <h3>Favorites</h3>
     </main>
   );
 };

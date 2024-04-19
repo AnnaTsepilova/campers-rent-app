@@ -6,11 +6,14 @@ import css from './AdvertsList.module.css';
 
 import { selectAdverts } from '../../redux/selectors';
 import { useState, useEffect } from 'react';
+import ModalAdvert from 'components/Modal/ModalAdvert';
 
 const AdvertsList = () => {
   const allAdverts = useSelector(selectAdverts);
   const [advertsLimited, setAdvertsLimited] = useState([]);
   const [showLoadMore, setShowLoadMore] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [currentAdvert, setCurrentAdvert] = useState(false);
 
   const advertsPerPage = 4;
 
@@ -27,15 +30,35 @@ const AdvertsList = () => {
     setShowLoadMore(!(loadMoreAcc >= allAdverts.length));
   }
 
+  function toggleShowModal(currentAdvert) {
+    setShowModal(!showModal);
+    setCurrentAdvert(currentAdvert);
+  }
+
+  function handleModalClose(params) {
+    setShowModal(false);
+  }
+
   return (
-    <div className={css.advertsList_wrapper}>
-      <ul className={css.advertsList}>
-        {advertsLimited?.map(advert => {
-          return <AdvertItem key={advert._id} advert={advert} />;
-        })}
-      </ul>
-      {showLoadMore && <LoadMoreBtn onClick={handleClickLoadMore} />}
-    </div>
+    <>
+      <div className={css.advertsList_wrapper}>
+        <ul className={css.advertsList}>
+          {advertsLimited?.map(advert => {
+            return (
+              <AdvertItem
+                key={advert._id}
+                advert={advert}
+                toggleShowModal={toggleShowModal}
+              />
+            );
+          })}
+        </ul>
+        {showLoadMore && <LoadMoreBtn onClick={handleClickLoadMore} />}
+      </div>
+      {showModal && (
+        <ModalAdvert advert={currentAdvert} onModalClose={handleModalClose} />
+      )}
+    </>
   );
 };
 
