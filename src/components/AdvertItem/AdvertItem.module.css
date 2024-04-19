@@ -15,11 +15,17 @@
   border-color: var(--accent-hover);
 }
 
-.advertItem_container img {
+.advertItem_img {
   width: 290px;
   height: 310px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.advertItem_gallery {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .advert_info {
@@ -95,6 +101,10 @@
   color: var(--text-color);
   height: 24px;
   overflow: hidden;
+}
+
+.modal_descr {
+  color: var(--text-color);
 }
 
 .features_list {

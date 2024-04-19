@@ -8,7 +8,12 @@ import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 const AdvertItem = ({ advert }) => {
   return (
     <li className={css.advertItem_container}>
-      <img src={advert.gallery[0]} alt={advert.name} width={290} />
+      <img
+        className={css.advertItem_img}
+        src={advert.gallery[0]}
+        alt={advert.name}
+        width={290}
+      />
 
       <div className={css.advert_info}>
         <div>

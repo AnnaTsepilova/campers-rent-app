@@ -1,5 +1,11 @@
+import Modal from 'components/Modal/Modal';
+
 const Favorites = () => {
-  return <main>Favorites</main>;
+  return (
+    <main>
+      <Modal />
+    </main>
+  );
 };
 
 export default Favorites;
