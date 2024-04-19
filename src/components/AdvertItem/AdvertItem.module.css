@@ -100,13 +100,13 @@
   overflow: hidden;
 }
 
-.categories_list {
+.features_list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.categories_item {
+.features_item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +118,7 @@
   background: var(--light-grey);
 }
 
-.categories_name {
+.features_name {
   font-weight: 500;
   line-height: 1.25;
 }

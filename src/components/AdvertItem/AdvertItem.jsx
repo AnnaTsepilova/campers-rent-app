@@ -1,7 +1,9 @@
 import css from './AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
+
 import { Button } from 'components/Button/Button';
 import { CutText, CutTitle } from 'components/CutText/CutText';
+import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 
 const AdvertItem = ({ advert }) => {
   console.log('advert :>> ', advert);
@@ -38,39 +40,8 @@ const AdvertItem = ({ advert }) => {
           </div>
         </div>
         <CutText>{advert.description}</CutText>
-        <ul className={css.categories_list}>
-          <li className={css.categories_item}>
-            <svg width={20} height={20}>
-              <use href={`${svgSprite}#users`}></use>
-            </svg>
-            <p className={css.categories_name}>{advert.adults} adults</p>
-          </li>
-          <li className={css.categories_item}>
-            <svg width={20} height={20}>
-              <use href={`${svgSprite}#auto`}></use>
-            </svg>
-            <p className={css.categories_name}>Automatic</p>
-          </li>
-          <li className={css.categories_item}>
-            <svg width={20} height={20}>
-              <use href={`${svgSprite}#petrol`}></use>
-            </svg>
-            <p className={css.categories_name}>Petrol</p>
-          </li>
-
-          <li className={css.categories_item}>
-            <svg width={20} height={20}>
-              <use href={`${svgSprite}#kitchen`}></use>
-            </svg>
-            <p className={css.categories_name}>Kitchen</p>
-          </li>
-
-          <li className={css.categories_item}>
-            <svg width={20} height={20}>
-              <use href={`${svgSprite}#bed`}></use>
-            </svg>
-            <p className={css.categories_name}>{advert.details.beds} beds</p>
-          </li>
+        <ul className={css.features_list}>
+          <FeaturesInAdvertItem advert={advert} />
         </ul>
         <Button>Show more</Button>
       </div>
