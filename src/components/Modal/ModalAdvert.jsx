@@ -6,14 +6,12 @@ import css from './ModalAdvert.module.css';
 import style from '../AdvertItem/AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
 
-import FeatureDetailsList from 'components/Features/FeatureDetailsList';
 import Features from 'components/Features/Features';
 import Reviews from 'components/Reviews/Reviews';
 
-import { toCapitalize } from 'helpers/helperFunctions';
-
 const ModalAdvert = ({ advert, onModalClose }) => {
   const [btnActive, setBtnActive] = useState('features');
+
   console.log('advert :>> ', advert);
   return (
     <Modal onModalClose={onModalClose}>
@@ -73,54 +71,29 @@ const ModalAdvert = ({ advert, onModalClose }) => {
 
         <div className={css.advert_details_btns}>
           <button
-            className={`${css.advert_details_btn}`}
-            // isActive={btnActive === 'features'}
-            // onClick={() => setBtnActive('features')}
+            className={`${css.advert_details_btn} ${
+              btnActive === 'features' ? css.row_accent : ''
+            }`}
+            onClick={() => setBtnActive('features')}
           >
             Features
           </button>
           <button
-            className={`${css.advert_details_btn}`}
-            // isActive={btnActive === 'rewiews'}
-            // onClick={() => setBtnActive('rewiews')}
+            className={`${css.advert_details_btn} ${
+              btnActive === 'rewiews' ? css.row_accent : ''
+            }`}
+            onClick={() => setBtnActive('rewiews')}
           >
             Reviews
           </button>
         </div>
         <div className={css.advert_details_wrapper}>
-          {/* <Features advert={advert} /> */}
-
-          <Reviews reviews={advert.reviews} />
-
-          {/* {btnActive === 'features' && (
-                <>
-                  <FeatureDetailsList features={advert} />
-
-                  <h3>Vehicle details</h3>
-                  <p className={styles['decor']}></p>
-                  <div className={styles['feature-container-list']}>
-                    <p>
-                      <span>Form</span> <span>{currentAdvert.form}</span>
-                    </p>
-                    <p>
-                      <span>Length</span> <span>{currentAdvert.length}</span>
-                    </p>
-                    <p>
-                      <span>Width</span> <span>{currentAdvert.width}</span>
-                    </p>
-                    <p>
-                      <span>Height</span> <span>{currentAdvert.height}</span>
-                    </p>
-                    <p>
-                      <span>Tank</span> <span>{currentAdvert.tank}</span>
-                    </p>
-                    <p>
-                      <span>Consumption</span>
-                      <span>{currentAdvert.consumption}</span>
-                    </p>
-                  </div>
-                </>
-              )} */}
+          {btnActive === 'features' ? <Features advert={advert} /> : <></>}
+          {btnActive === 'rewiews' ? (
+            <Reviews reviews={advert.reviews} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </Modal>
