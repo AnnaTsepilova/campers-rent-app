@@ -29,10 +29,11 @@
 
 .primary_btn:hover,
 .primary_btn:focus,
-.primary_btn:active,
+/* .primary_btn:active, */
 .search_btn:hover,
-.search_btn:focus,
-.search_btn:active {
+.search_btn:focus
+/* ,
+.search_btn:active  */ {
   background-color: var(--accent-hover);
 }
 
@@ -50,8 +51,7 @@
 }
 
 .loadMore_btn:hover,
-.loadMore_btn:focus,
-.loadMore_btn:active {
+.loadMore_btn:focus {
   background-color: transparent;
   border-color: var(--accent-color);
 }

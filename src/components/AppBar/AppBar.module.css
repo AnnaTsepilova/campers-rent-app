@@ -15,15 +15,16 @@
 }
 
 .head_navLink {
+  color: var(--primary-black);
   text-decoration: none;
   transition: color var(--transition-function);
 }
 
-.head_navLink.active {
+.active {
   color: var(--accent-color);
 }
 
-.head_navLink:hover:not(.active),
-.head_navLink:focus-visible:not(.active) {
+.head_navLink:hover,
+.head_navLink:focus {
   color: var(--accent-hover);
 }

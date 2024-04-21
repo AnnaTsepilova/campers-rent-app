@@ -14,7 +14,13 @@ const AppBar = () => {
         <ul className={css.head_navList}>
           {navItems.map(({ href, text }) => (
             <li className={css.head_navItem} key={href}>
-              <NavLink className={css.head_navLink} reloadDocument to={href}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? css.active : css.head_navLink
+                }
+                reloadDocument
+                to={href}
+              >
                 {text}
               </NavLink>
             </li>

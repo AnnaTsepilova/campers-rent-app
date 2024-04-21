@@ -19,13 +19,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  min-height: 640px;
+  max-height: 720px;
   height: auto;
   padding: 40px;
 
   border-radius: 20px;
   background-color: var(--white);
+
+  overflow: hidden scroll;
 }
+
+/* .scroller {
+  overflow-y: scroll;
+  scrollbar-color: var(--scroll-color);
+  scroll-padding-top: 174px;
+  scrollbar-width: 8px;
+} */
 
 .modal_close_btn {
   position: absolute;
@@ -76,32 +85,35 @@
   margin-bottom: 0;
 }
 
-.advert_details {
+.scroll_info {
+  overflow: hidden scroll;
+}
+
+.advert_details_btns {
   display: flex;
   gap: 40px;
 
   border-bottom: 1px solid var(--border-color);
 }
 
-.advert_details_link {
+.advert_details_btn {
+  position: relative;
   margin-bottom: 24px;
 
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
   outline: none;
+  background-color: transparent;
 }
 
-.advert_details_link:hover,
-.advert_details_link:focus {
+.advert_details_btn.active,
+.advert_details_btn:hover,
+.advert_details_btn:focus {
   color: var(--accent-color);
 }
 
-/* .advert_details_link.current {
-  color: var(--accent-color);
-} */
-
-.row_accent::after {
+.advert_details_btn::after {
   content: '';
   display: block;
 
@@ -122,8 +134,75 @@
   transition: opacity var(--transition-function);
 }
 
-.row-accent.current::after,
-.row-accent.current:hover::after,
-.row-accent.current:focus::after {
+.advert_details_btn.active::after {
   opacity: 1;
+}
+
+/* .row_accent::after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background-color: var(--accent-color);
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0;
+
+  transition: opacity var(--transition-function);
+} */
+
+/* .row_accent:hover::after,
+.row-accent:focus::after {
+  opacity: 1;
+} */
+
+/* .row-accent::after.active,
+.row-accent.active:hover::after,
+.row-accent.active:focus::after {
+  opacity: 1;
+} */
+
+/* const StyledLink = styled(NavLink)`
+  color: #101828;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-right: 20px;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    transition: width 0.3s;
+  }
+
+  &.active::after {
+    width: 100%;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`; */
+
+.advert_details_wrapper {
+  display: flex;
+
+  gap: 24px;
+
+  padding-top: 44px;
 }

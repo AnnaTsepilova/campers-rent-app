@@ -43,15 +43,19 @@ const AdvertsList = () => {
     <>
       <div className={css.advertsList_wrapper}>
         <ul className={css.advertsList}>
-          {advertsLimited?.map(advert => {
-            return (
-              <AdvertItem
-                key={advert._id}
-                advert={advert}
-                toggleShowModal={toggleShowModal}
-              />
-            );
-          })}
+          {advertsLimited ? (
+            advertsLimited.map(advert => {
+              return (
+                <AdvertItem
+                  key={advert._id}
+                  advert={advert}
+                  toggleShowModal={toggleShowModal}
+                />
+              );
+            })
+          ) : (
+            <p>There are no campers for your request</p>
+          )}
         </ul>
         {showLoadMore && <LoadMoreBtn onClick={handleClickLoadMore} />}
       </div>

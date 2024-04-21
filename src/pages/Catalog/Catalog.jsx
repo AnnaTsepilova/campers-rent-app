@@ -20,17 +20,8 @@ const Catalog = () => {
 
   return (
     <main className={css.catalogPage_wrapper}>
-      {isLoading && !error ? (
-        <>
-          <SearchBar />
-          <Loader />
-        </>
-      ) : (
-        <>
-          <SearchBar />
-          <AdvertsList />
-        </>
-      )}
+      <SearchBar />
+      {isLoading && !error ? <Loader /> : <AdvertsList />}
     </main>
   );
 };

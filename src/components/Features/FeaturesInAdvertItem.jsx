@@ -1,11 +1,8 @@
 import css from '../AdvertItem/AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
+import { toCapitalize } from 'helpers/helperFunctions';
 
 const FeaturesInAdvertItem = ({ advert }) => {
-  function toCapitalize(value) {
-    return value.slice(0, 1).toUpperCase() + value.slice(1);
-  }
-
   return (
     <>
       <li className={css.features_item}>

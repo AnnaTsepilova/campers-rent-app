@@ -21,6 +21,8 @@ const Modal = ({ onModalClose, children }) => {
   }, [onModalClose]);
 
   const handleBackdropClick = event => {
+    console.log('backdrop click target', event.target);
+    console.log('backdrop click currentTarget', event.currentTarget);
     if (event.currentTarget === event.target) {
       onModalClose();
     }

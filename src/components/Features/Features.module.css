@@ -1,0 +1,48 @@
+.features_details {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+
+  width: 430px;
+}
+
+.vehicle_title {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.vehicle_title::after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--line-color);
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vehicle_list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vehicle_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vehicle_item h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+}

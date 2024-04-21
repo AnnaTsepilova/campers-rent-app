@@ -8,6 +8,11 @@ body {
   color: var(--primary-black);
 }
 
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

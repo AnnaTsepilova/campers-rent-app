@@ -1,12 +1,12 @@
 import css from '../AdvertItem/AdvertItem.module.css';
 import svgSprite from '../../img/icons.svg';
 
-const FeatureItem = ({ advert }) => {
+const FeatureDetailsList = ({ features }) => {
   return (
-    <>
-      {Object.keys(advert.details).map(key => {
+    <ul className={css.features_list}>
+      {Object.keys(features.details).map(key => {
         let keyText = key;
-        let value = advert.details[key];
+        let value = features.details[key];
         let valueText = value;
         if (key === 'airConditioner') {
           keyText = 'air conditioner';
@@ -16,7 +16,10 @@ const FeatureItem = ({ advert }) => {
         }
         if (value) {
           return (
-            <li className={css.features_item} key={key}>
+            <li
+              className={css.features_item}
+              key={`${key}_${Math.random(100)}`}
+            >
               <svg width={20} height={20}>
                 <use href={`${svgSprite}#${key}`}></use>
               </svg>
@@ -27,8 +30,8 @@ const FeatureItem = ({ advert }) => {
           );
         } else return <></>;
       })}
-    </>
+    </ul>
   );
 };
 
-export default FeatureItem;
+export default FeatureDetailsList;

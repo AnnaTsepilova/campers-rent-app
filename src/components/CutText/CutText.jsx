@@ -11,10 +11,10 @@ export const CutText = ({ children, maxLength = 62 }) => {
 
 export const CutTitle = ({ children, maxLength = 28 }) => {
   if (children.length <= maxLength) {
-    return <h3>{children}</h3>;
+    return <h2>{children}</h2>;
   }
 
   let title = children.substring(0, maxLength) + ' ...';
 
-  return <h3>{title}</h3>;
+  return <h2>{title}</h2>;
 };
