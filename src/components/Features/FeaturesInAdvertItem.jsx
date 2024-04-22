@@ -1,4 +1,4 @@
-import css from '../AdvertItem/AdvertItem.module.css';
+import css from './Features.module.css';
 import svgSprite from '../../img/icons.svg';
 import { toCapitalize } from 'helpers/helperFunctions';
 

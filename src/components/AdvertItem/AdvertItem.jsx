@@ -1,4 +1,5 @@
 import css from './AdvertItem.module.css';
+import style from '../Features/Features.module.css';
 import svgSprite from '../../img/icons.svg';
 
 import { Button } from 'components/Button/Button';
@@ -45,7 +46,7 @@ const AdvertItem = ({ advert, toggleShowModal }) => {
           </div>
         </div>
         <CutText>{advert.description}</CutText>
-        <ul className={css.features_list}>
+        <ul className={style.features_list}>
           <FeaturesInAdvertItem advert={advert} />
         </ul>
         <Button

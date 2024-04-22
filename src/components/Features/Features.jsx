@@ -4,9 +4,9 @@ import { toCapitalize } from 'helpers/helperFunctions';
 
 const Features = ({ advert }) => {
   return (
-    <div className={css.features_details}>
+    <>
       <FeatureDetailsList features={advert} />
-      <h3 className={css.vehicle_title}>Vehicle details</h3>
+      <h3 className={`${css.vehicle_title} subtitle_h3 `}>Vehicle details</h3>
       <ul className={css.vehicle_list}>
         <li className={css.vehicle_item}>
           <p>Form</p>
@@ -33,7 +33,7 @@ const Features = ({ advert }) => {
           <p>{advert.consumption}</p>
         </li>
       </ul>
-    </div>
+    </>
   );
 };
 

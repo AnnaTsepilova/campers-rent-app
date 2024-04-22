@@ -8,7 +8,7 @@ export const Button = ({ children, onClick }) => {
   );
 };
 
-export const SearchButton = ({ children, onSubmit }) => {
+export const SubmitButton = ({ children, onSubmit }) => {
   return (
     <button className={css.search_btn} type="submit" onSubmit={onSubmit}>
       {children}

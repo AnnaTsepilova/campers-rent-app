@@ -1,16 +1,5 @@
-.features_details {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-
-  width: 430px;
-}
-
 .vehicle_title {
   position: relative;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
 }
 
 .vehicle_title::after {
@@ -45,4 +34,27 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33;
+}
+
+.features_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.features_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 100px;
+  background: var(--light-grey);
+}
+
+.features_name {
+  font-weight: 500;
+  line-height: 1.25;
 }

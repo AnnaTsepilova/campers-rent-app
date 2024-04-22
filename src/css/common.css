@@ -31,3 +31,19 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
+
+.subtitle_h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subtitle_h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.text {
+  color: var(--text-color);
+}

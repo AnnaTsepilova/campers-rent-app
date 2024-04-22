@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 24px;
 
-  width: 430px;
+  width: 100%;
 }
 
 .reviews_item {
@@ -48,10 +48,4 @@
 
 .inactive_star {
   fill: var(--light-grey);
-}
-
-.reviews_item h3 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.33;
 }

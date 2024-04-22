@@ -1,4 +1,4 @@
-import { Scrollbars } from 'rc-scrollbars';
+// import { Scrollbars } from 'rc-scrollbars';
 import { useState } from 'react';
 
 import Modal from './Modal';
@@ -8,11 +8,11 @@ import svgSprite from '../../img/icons.svg';
 
 import Features from 'components/Features/Features';
 import Reviews from 'components/Reviews/Reviews';
+import BookingForm from 'components/BookingForm/BookingForm';
 
 const ModalAdvert = ({ advert, onModalClose }) => {
   const [btnActive, setBtnActive] = useState('features');
 
-  console.log('advert :>> ', advert);
   return (
     <Modal onModalClose={onModalClose}>
       <div className={`${css.modal_window} `}>
@@ -66,12 +66,12 @@ const ModalAdvert = ({ advert, onModalClose }) => {
               </li>
             ))}
           </ul>
-          <p className={style.modal_descr}>{advert.description}</p>
+          <p className="text">{advert.description}</p>
         </div>
 
         <div className={css.advert_details_btns}>
           <button
-            className={`${css.advert_details_btn} ${
+            className={`${css.advert_details_btn} subtitle_h3 ${
               btnActive === 'features' ? css.row_accent : ''
             }`}
             onClick={() => setBtnActive('features')}
@@ -79,7 +79,7 @@ const ModalAdvert = ({ advert, onModalClose }) => {
             Features
           </button>
           <button
-            className={`${css.advert_details_btn} ${
+            className={`${css.advert_details_btn} subtitle_h3 ${
               btnActive === 'rewiews' ? css.row_accent : ''
             }`}
             onClick={() => setBtnActive('rewiews')}
@@ -88,12 +88,15 @@ const ModalAdvert = ({ advert, onModalClose }) => {
           </button>
         </div>
         <div className={css.advert_details_wrapper}>
-          {btnActive === 'features' ? <Features advert={advert} /> : <></>}
-          {btnActive === 'rewiews' ? (
-            <Reviews reviews={advert.reviews} />
-          ) : (
-            <></>
-          )}
+          <div className={css.advert_details}>
+            {btnActive === 'features' ? <Features advert={advert} /> : <></>}
+            {btnActive === 'rewiews' ? (
+              <Reviews reviews={advert.reviews} />
+            ) : (
+              <></>
+            )}
+          </div>
+          <BookingForm />
         </div>
       </div>
     </Modal>

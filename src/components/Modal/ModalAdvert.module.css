@@ -93,9 +93,6 @@
   position: relative;
   margin-bottom: 24px;
 
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
   outline: none;
   background-color: transparent;
 }
@@ -121,8 +118,16 @@
 
 .advert_details_wrapper {
   display: flex;
-
+  width: 902px;
   gap: 24px;
 
   padding-top: 44px;
+}
+
+.advert_details {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+
+  width: calc((100% - 24px) / 2);
 }

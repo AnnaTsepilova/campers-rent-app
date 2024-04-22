@@ -13,7 +13,7 @@ const Reviews = ({ reviews }) => {
                   {review.reviewer_name.slice(0, 1).toUpperCase()}
                 </span>
                 <div>
-                  <h3 className={css.name}>{review.reviewer_name}</h3>
+                  <h4 className="subtitle_h4">{review.reviewer_name}</h4>
                   <RatingStarsList review={review} />
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import css from './SearchBar.module.css';
 import svgSprite from '../../img/icons.svg';
 
-import { SearchButton } from 'components/Button/Button';
+import { SubmitButton } from 'components/Button/Button';
 
 const SearchBar = () => {
   return (
@@ -33,7 +33,7 @@ const SearchBar = () => {
             Filters
           </label>
         </div>
-        <SearchButton type="submit">Search</SearchButton>
+        <SubmitButton type="submit">Search</SubmitButton>
       </form>
     </>
   );

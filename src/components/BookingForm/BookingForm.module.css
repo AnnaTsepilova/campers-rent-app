@@ -1,0 +1,71 @@
+.bookForm_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: calc((100% - 24px) / 2);
+  padding: 24px;
+
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.book_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+}
+
+.bookForm_title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookForm_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bookForm_input {
+  width: 400px;
+
+  padding: 18px;
+
+  border: transparent;
+  border-radius: 10px;
+  background: var(--input-bg-color);
+  outline: transparent;
+
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.bookForm_textarea {
+  composes: bookForm_input;
+
+  overflow: auto;
+  resize: none;
+
+  height: 114px;
+}
+
+.calendar_input {
+  position: relative;
+  width: 100%;
+}
+
+.calendar_svg {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: var(--label);
+}
+
+.calendar_input:focus + .calendar_svg {
+  fill: var(--primary-black);
+}
