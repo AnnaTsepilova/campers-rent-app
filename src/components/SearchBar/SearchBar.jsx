@@ -3,13 +3,15 @@ import svgSprite from '../../img/icons.svg';
 
 import { SubmitButton } from 'components/Button/Button';
 
-const SearchBar = () => {
+const SearchBar = ({ searchQuery, filterByLocation }) => {
+  const onLocationChange = event => {
+    console.log('Location event.target.value :>> ', event.target.value);
+    filterByLocation(event.target.value);
+  };
+
   return (
     <>
-      <form
-        className={css.searchBar_wrapper}
-        //   onSubmit={onHandleSubmit}
-      >
+      <div className={css.searchBar_wrapper}>
         <div className={css.location_wrapper}>
           <label className={css.label} htmlFor="location">
             Location
@@ -17,24 +19,30 @@ const SearchBar = () => {
           <div className={css.locationInput_wrapper}>
             <input
               className={css.location_input}
-              type="text"
               name="location"
-              id="location"
+              type="text"
               autoComplete="off"
               placeholder="City"
+              value={searchQuery}
+              onChange={onLocationChange}
             />
             <svg className={css.location_svg} width={18} height={20}>
               <use href={`${svgSprite}#map-pin`}></use>
             </svg>
           </div>
         </div>
-        <div className={css.filters_wrapper}>
-          <label className={css.label} htmlFor="">
-            Filters
-          </label>
-        </div>
-        <SubmitButton type="submit">Search</SubmitButton>
-      </form>
+        <form
+        // className={css.searchBar_wrapper}
+        //   onSubmit={onHandleSubmit}
+        >
+          <div className={css.filters_wrapper}>
+            <label className={css.label} htmlFor="">
+              Filters
+            </label>
+          </div>
+          <SubmitButton type="submit">Search</SubmitButton>
+        </form>
+      </div>
     </>
   );
 };

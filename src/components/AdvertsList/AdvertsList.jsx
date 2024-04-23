@@ -6,10 +6,13 @@ import { LoadMoreBtn } from 'components/Button/Button';
 import ModalAdvert from 'components/Modal/ModalAdvert';
 import css from './AdvertsList.module.css';
 
-import { selectAdverts } from '../../redux/selectors';
+import { filteredAdvertsSelector } from '../../redux/selectors';
 
 const AdvertsList = () => {
-  const allAdverts = useSelector(selectAdverts);
+  const allAdverts = useSelector(filteredAdvertsSelector);
+
+  console.log('allAdverts :>> ', allAdverts);
+
   const [advertsLimited, setAdvertsLimited] = useState([]);
   const [showLoadMore, setShowLoadMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -18,10 +21,8 @@ const AdvertsList = () => {
   const advertsPerPage = 4;
 
   useEffect(() => {
-    function fetchData() {
-      setAdvertsLimited(allAdverts.slice(0, advertsPerPage));
-    }
-    fetchData();
+    setAdvertsLimited(allAdverts.slice(0, advertsPerPage));
+    setShowLoadMore(allAdverts.length > advertsPerPage);
   }, [allAdverts]);
 
   function handleClickLoadMore() {
@@ -35,7 +36,7 @@ const AdvertsList = () => {
     setCurrentAdvert(currentAdvert);
   }
 
-  function handleModalClose(params) {
+  function handleModalClose() {
     setShowModal(false);
   }
 
