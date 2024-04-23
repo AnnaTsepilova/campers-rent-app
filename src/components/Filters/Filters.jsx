@@ -5,8 +5,26 @@ import svgSprite from '../../img/icons.svg';
 
 import { SubmitButton } from 'components/Button/Button';
 
+import { useDispatch } from 'react-redux';
+import { setFeatures } from '../../redux/filterSlice';
+
 const Filters = () => {
-  function onHandleSubmit() {}
+  const dispatch = useDispatch();
+
+  function onHandleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    const equipment = Array.from(formData.entries())
+      .filter(([key]) => key === 'equipment')
+      .map(equipment => equipment[1]);
+
+    const type = Array.from(formData.entries())
+      .filter(([key]) => key === 'type')
+      .map(type => type[1]);
+
+    dispatch(setFeatures({ equipment, type }));
+  }
 
   return (
     <form onSubmit={onHandleSubmit}>
@@ -22,7 +40,7 @@ const Filters = () => {
             <input
               type="checkbox"
               name="equipment"
-              value="AC"
+              value="airConditioner"
               className={css.equipment_input}
             />
             <svg width={32} height={32}>
@@ -34,7 +52,7 @@ const Filters = () => {
             <input
               type="checkbox"
               name="equipment"
-              value="automatic"
+              value="transmission"
               className={css.equipment_input}
             />
             <svg width={32} height={32}>
@@ -70,7 +88,7 @@ const Filters = () => {
             <input
               type="checkbox"
               name="equipment"
-              value="Shower/WC"
+              value="shower"
               className={css.equipment_input}
             />
             <svg width={32} height={32}>
@@ -90,7 +108,7 @@ const Filters = () => {
             <input
               type="radio"
               name="type"
-              value="van"
+              value="panelTruck"
               className={css.type_input}
             />
             <svg width={40} height={28}>

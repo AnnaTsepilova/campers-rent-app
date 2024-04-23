@@ -24,23 +24,19 @@
   composes: primary_btn;
 
   width: 173px;
-  height: 56px;
 }
 
 .primary_btn:hover,
 .primary_btn:focus,
-/* .primary_btn:active, */
 .search_btn:hover,
-.search_btn:focus
-/* ,
-.search_btn:active  */ {
+.search_btn:focus {
   background-color: var(--accent-hover);
 }
 
 .loadMore_btn {
   composes: primary_btn;
 
-  padding: 16px 32px;
+  width: 145px;
 
   background-color: transparent;
   border: 1px solid var(--border-color);

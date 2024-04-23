@@ -4,9 +4,10 @@ export const selectAdverts = state => state.adverts.items;
 export const selectIsLoading = state => state.adverts.isLoading;
 export const selectError = state => state.adverts.error;
 export const selectFilterLocation = state => state.filterLocation;
+export const selectFilterFeatures = state => state.features;
 
 export const filteredAdvertsSelector = createSelector(
-  [selectAdverts, selectFilterLocation],
+  [selectAdverts, selectFilterLocation, selectFilterFeatures],
   (adverts, filter) => {
     let result = filter.filterLocation
       ? adverts.filter(advert =>
@@ -16,6 +17,21 @@ export const filteredAdvertsSelector = createSelector(
         )
       : adverts;
 
+    if (filter.features.equipment.length > 0) {
+      result = result.filter(advert => {
+        let mathedEquipment = filter.features.equipment.every(
+          feature =>
+            advert.details[feature] > 0 || advert[feature] === 'automatic'
+        );
+        return mathedEquipment;
+      });
+    }
+
+    if (filter.features.type.length > 0) {
+      result = result.filter(advert =>
+        filter.features.type.includes(advert.form)
+      );
+    }
     return result;
   }
 );

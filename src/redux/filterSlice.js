@@ -2,6 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const filterInitialState = {
   filterLocation: '',
+  features: {
+    equipment: [],
+    type: [],
+  },
 };
 
 export const filterSlice = createSlice({
@@ -11,9 +15,14 @@ export const filterSlice = createSlice({
     setFilterLocation(state, action) {
       state.filterLocation = action.payload;
     },
+    setFeatures: (state, action) => {
+      console.log('action.payload setFeatures :>> ', action.payload);
+
+      state.features = action.payload;
+    },
   },
 });
 
-export const { setFilterLocation } = filterSlice.actions;
+export const { setFilterLocation, setFeatures } = filterSlice.actions;
 
 export const filterReducer = filterSlice.reducer;
