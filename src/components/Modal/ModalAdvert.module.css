@@ -19,6 +19,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
+  width: 982px;
   max-height: 720px;
   height: auto;
   padding: 40px;
@@ -91,7 +92,7 @@
 
 .advert_details_btn {
   position: relative;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
 
   outline: none;
   background-color: transparent;
@@ -102,7 +103,7 @@
   display: block;
 
   position: absolute;
-  bottom: -27px;
+  bottom: -3px;
   left: 0;
 
   width: 100%;
@@ -118,7 +119,7 @@
 
 .advert_details_wrapper {
   display: flex;
-  width: 902px;
+
   gap: 24px;
 
   padding-top: 44px;
@@ -129,5 +130,5 @@
   flex-direction: column;
   gap: 44px;
 
-  width: calc((100% - 24px) / 2);
+  width: 430px;
 }

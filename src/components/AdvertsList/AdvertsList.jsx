@@ -11,8 +11,6 @@ import { filteredAdvertsSelector } from '../../redux/selectors';
 const AdvertsList = () => {
   const allAdverts = useSelector(filteredAdvertsSelector);
 
-  console.log('allAdverts :>> ', allAdverts);
-
   const [advertsLimited, setAdvertsLimited] = useState([]);
   const [showLoadMore, setShowLoadMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -44,7 +42,7 @@ const AdvertsList = () => {
     <>
       <div className={css.advertsList_wrapper}>
         <ul className={css.advertsList}>
-          {advertsLimited ? (
+          {advertsLimited.length ? (
             advertsLimited.map(advert => {
               return (
                 <AdvertItem
@@ -55,7 +53,9 @@ const AdvertsList = () => {
               );
             })
           ) : (
-            <p>There are no campers for your request</p>
+            <li className={`${css.not_found} subtitle_h4`}>
+              There are no campers for your request
+            </li>
           )}
         </ul>
         {showLoadMore && <LoadMoreBtn onClick={handleClickLoadMore} />}

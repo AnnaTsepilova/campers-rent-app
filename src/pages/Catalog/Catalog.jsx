@@ -6,7 +6,6 @@ import SearchBar from 'components/SearchBar/SearchBar';
 import css from './Catalog.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilterLocation } from '../../redux/filterSlice';
 import { getAdverts } from '../../redux/operations';
 import { selectError, selectIsLoading } from '../../redux/selectors';
 
@@ -21,9 +20,7 @@ const Catalog = () => {
 
   return (
     <main className={css.catalogPage_wrapper}>
-      <SearchBar
-        filterByLocation={payload => dispatch(setFilterLocation(payload))}
-      />
+      <SearchBar />
       {isLoading && !error ? <Loader /> : <AdvertsList />}
     </main>
   );

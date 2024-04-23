@@ -8,7 +8,6 @@ export const selectFilterLocation = state => state.filterLocation;
 export const filteredAdvertsSelector = createSelector(
   [selectAdverts, selectFilterLocation],
   (adverts, filter) => {
-    console.log('location :>> ', filter);
     let result = filter.filterLocation
       ? adverts.filter(advert =>
           advert.location
