@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
+
 import css from './AppBar.module.css';
+import svgSprite from '../../img/icons.svg';
 
 const navItems = [
   { href: '/', text: 'Home' },
@@ -10,6 +12,20 @@ const navItems = [
 const AppBar = () => {
   return (
     <header className={css.header_container}>
+      <a href="./index.html" className={css.logo_header} aria-label="Logo">
+        <svg width={40} height={29}>
+          <use href={`${svgSprite}#alcove`}></use>
+        </svg>
+        <div className={css.slogan}>
+          <span className={css.slogan_first}>
+            Your <span className={css.accent}>best</span>
+          </span>
+          <span className={css.slogan_second}>
+            {' '}
+            camper <span className={css.accent}>here</span>
+          </span>
+        </div>
+      </a>
       <nav className={css.nav_wrapper}>
         <ul className={css.head_navList}>
           {navItems.map(({ href, text }) => (

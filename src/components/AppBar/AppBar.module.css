@@ -1,30 +1,116 @@
 .header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 20px;
 }
 
+.logo_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo_header svg {
+  fill: var(--accent-color);
+  transition: fill var(--transition-function);
+}
+
+/* .logo_header:hover svg,
+.logo_header:focus svg {
+  fill: var(--primary-black);
+} */
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  line-height: 1;
+  color: var(--primary-black);
+
+  transition: color var(--transition-function);
+}
+
+.slogan_first {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* .logo_header .slogan:hover,
+.logo_header .slogan:focus {
+  color: var(--accent-color);
+} */
+
+.slogan_second {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2.4px;
+}
+
+.accent {
+  color: var(--accent-color);
+
+  transition: color var(--transition-function);
+}
+
+/* .logo_header .accent:hover,
+.logo_header .accent:focus {
+  color: var(--primary-black);
+} */
+
 .nav_wrapper {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
+  height: 54px;
+  border-radius: 200px;
+  background: var(--accent-color);
 }
 
 .head_navList {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .head_navItem {
-  margin-right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .head_navLink {
-  color: var(--primary-black);
+  padding: 6px 12px;
+
+  color: var(--white);
+  font-weight: 500;
   text-decoration: none;
-  transition: color var(--transition-function);
+  border-radius: 100px;
+
+  transition: color var(--transition-function),
+    background-color var(--transition-function);
 }
 
 .active {
-  color: var(--accent-color);
+  composes: head_navLink;
+
+  color: var(--accent-hover);
+
+  background-color: var(--white);
+
+  transition: color var(--transition-function),
+    background-color var(--transition-function);
 }
 
 .head_navLink:hover,
 .head_navLink:focus {
   color: var(--accent-hover);
+  background-color: var(--white);
 }

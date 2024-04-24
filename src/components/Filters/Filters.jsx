@@ -36,8 +36,9 @@ const Filters = () => {
           Vehicle equipment
         </h3>
         <fieldset className={css.group_wrapper}>
-          <label className={css.equipment_label}>
+          <label className={css.equipment_label} htmlFor="equipment">
             <input
+              id="equipment"
               type="checkbox"
               name="equipment"
               value="airConditioner"
@@ -48,7 +49,7 @@ const Filters = () => {
             </svg>
             AC
           </label>
-          <label className={css.equipment_label}>
+          <label className={css.equipment_label} htmlFor="equipment">
             <input
               type="checkbox"
               name="equipment"
@@ -60,7 +61,7 @@ const Filters = () => {
             </svg>
             Automatic
           </label>
-          <label className={css.equipment_label}>
+          <label className={css.equipment_label} htmlFor="equipment">
             <input
               type="checkbox"
               name="equipment"
@@ -72,7 +73,7 @@ const Filters = () => {
             </svg>
             Kitchen
           </label>
-          <label className={css.equipment_label}>
+          <label className={css.equipment_label} htmlFor="equipment">
             <input
               type="checkbox"
               name="equipment"
@@ -84,7 +85,7 @@ const Filters = () => {
             </svg>
             TV
           </label>
-          <label className={css.equipment_label}>
+          <label className={css.equipment_label} htmlFor="equipment">
             <input
               type="checkbox"
               name="equipment"
@@ -104,8 +105,9 @@ const Filters = () => {
           Vehicle type
         </h3>
         <fieldset className={css.group_wrapper_type}>
-          <label className={css.type_label}>
+          <label className={css.type_label} htmlFor="type">
             <input
+              id="type"
               type="radio"
               name="type"
               value="panelTruck"
@@ -116,7 +118,7 @@ const Filters = () => {
             </svg>
             Van
           </label>
-          <label className={css.type_label}>
+          <label className={css.type_label} htmlFor="type">
             <input
               type="radio"
               name="type"
@@ -128,7 +130,7 @@ const Filters = () => {
             </svg>
             Fully Integrated
           </label>
-          <label className={css.type_label}>
+          <label className={css.type_label} htmlFor="type">
             <input
               type="radio"
               name="type"

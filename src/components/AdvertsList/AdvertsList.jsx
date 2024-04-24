@@ -15,7 +15,6 @@ const AdvertsList = ({ allAdverts, isFavorites = false }) => {
   const [currentAdvert, setCurrentAdvert] = useState(false);
 
   const favorites = useSelector(selectFavorites);
-  console.log('favorites AdvertsList :>> ', favorites);
 
   const advertsPerPage = 4;
 

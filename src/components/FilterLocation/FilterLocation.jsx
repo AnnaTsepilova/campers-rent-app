@@ -20,6 +20,7 @@ const FilterLocation = () => {
       <div className={css.locationInput_wrapper}>
         <input
           className={css.location_input}
+          id="location"
           name="location"
           type="text"
           autoComplete="off"

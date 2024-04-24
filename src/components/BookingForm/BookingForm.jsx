@@ -66,6 +66,7 @@ const BookingForm = () => {
               name="name"
               type="text"
               placeholder="Name"
+              autoComplete="off"
               className={css.bookForm_input}
               value={name}
               onChange={handleChange}
@@ -84,7 +85,7 @@ const BookingForm = () => {
             />
           </label>
 
-          <label htmlFor="date" className={css.calendar_input}>
+          <label htmlFor="bookingDate" className={css.calendar_input}>
             <input
               name="bookingDate"
               type="date"
