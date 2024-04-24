@@ -61,8 +61,13 @@
   gap: 10px;
 }
 
-.price_fav_wrapper svg {
-  fill: currentColor;
+.favorites_icon {
+  transition: fill var(--transition-function);
+}
+
+.favorites_icon:hover,
+.favorites_icon:focus {
+  fill: var(--accent-hover);
 }
 
 .favorites_btn {

@@ -6,14 +6,11 @@ import { Button } from 'components/Button/Button';
 import { CutText, CutTitle } from 'components/CutText/CutText';
 import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from '../../redux/selectors';
-import { addFavorite } from '../../redux/favoritesSlice';
+import { useDispatch } from 'react-redux';
+import { setFavorite } from '../../redux/favoritesSlice';
 
-const AdvertItem = ({ advert, toggleShowModal }) => {
+const AdvertItem = ({ advert, toggleShowModal, isFavorite = false }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
-  console.log('favorites :>> ', favorites);
 
   return (
     <li className={css.advertItem_container}>
@@ -34,11 +31,22 @@ const AdvertItem = ({ advert, toggleShowModal }) => {
               <button
                 type="button"
                 className={css.favorites_btn}
-                onClick={() => dispatch(addFavorite(advert._id))}
+                onClick={() => dispatch(setFavorite(advert._id))}
               >
-                <svg width={24} height={24}>
-                  <use href={`${svgSprite}#heart`}></use>
-                </svg>
+                {' '}
+                {isFavorite ? (
+                  <svg
+                    width={24}
+                    height={24}
+                    className={css.favorites_icon_active}
+                  >
+                    <use href={`${svgSprite}#fav-heart`}></use>
+                  </svg>
+                ) : (
+                  <svg width={24} height={24} className={css.favorites_icon}>
+                    <use href={`${svgSprite}#heart`}></use>
+                  </svg>
+                )}
               </button>
             </div>
           </div>

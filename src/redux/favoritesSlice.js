@@ -4,18 +4,15 @@ export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: { favorites: [] },
   reducers: {
-    addFavorite(state, action) {
-      state.favorites.push(action.payload);
-    },
-    removeFavorite(state, action) {
-      const favorites = state.favorites.filter(
-        favorite => favorite.id !== action.payload
-      );
+    setFavorite(state, action) {
+      const favorites = state.favorites.includes(action.payload)
+        ? state.favorites.filter(favorite => favorite !== action.payload)
+        : [...state.favorites, action.payload];
       return { favorites: favorites };
     },
   },
 });
 
-export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export const { setFavorite } = favoritesSlice.actions;
 
 export const favoritesReducer = favoritesSlice.reducer;

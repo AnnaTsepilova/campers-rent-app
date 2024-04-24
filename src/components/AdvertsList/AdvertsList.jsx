@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 import AdvertItem from 'components/AdvertItem/AdvertItem';
 import { LoadMoreBtn } from 'components/Button/Button';
 import ModalAdvert from 'components/Modal/ModalAdvert';
 import css from './AdvertsList.module.css';
 
-import { filteredAdvertsSelector } from '../../redux/selectors';
+import { useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/selectors';
 
-const AdvertsList = () => {
-  const allAdverts = useSelector(filteredAdvertsSelector);
-
+const AdvertsList = ({ allAdverts, isFavorites = false }) => {
   const [advertsLimited, setAdvertsLimited] = useState([]);
   const [showLoadMore, setShowLoadMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [currentAdvert, setCurrentAdvert] = useState(false);
+
+  const favorites = useSelector(selectFavorites);
+  console.log('favorites AdvertsList :>> ', favorites);
 
   const advertsPerPage = 4;
 
@@ -49,12 +50,17 @@ const AdvertsList = () => {
                   key={advert._id}
                   advert={advert}
                   toggleShowModal={toggleShowModal}
+                  isFavorite={favorites.favorites.includes(advert._id)}
                 />
               );
             })
           ) : (
             <li className={`${css.not_found} subtitle_h4`}>
-              There are no campers for your request
+              {isFavorites ? (
+                <p>There are no campers in your favorites</p>
+              ) : (
+                <p>There are no campers for your request</p>
+              )}
             </li>
           )}
         </ul>
