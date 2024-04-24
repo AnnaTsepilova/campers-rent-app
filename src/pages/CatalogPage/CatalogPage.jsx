@@ -8,6 +8,7 @@ import css from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdverts } from '../../redux/operations';
 import { selectError, selectIsLoading } from '../../redux/selectors';
+import Section from 'components/Section/Section';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -19,10 +20,13 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <main className={css.catalogPage_wrapper}>
-      {/* <h1>Catalog</h1> */}
-      <SearchBar />
-      {isLoading && !error ? <Loader /> : <AdvertsList />}
+    <main>
+      <Section>
+        <div className={css.catalogPage_wrapper}>
+          <SearchBar />
+          {isLoading && !error ? <Loader /> : <AdvertsList />}
+        </div>
+      </Section>
     </main>
   );
 };

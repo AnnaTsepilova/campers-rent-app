@@ -5,6 +5,7 @@ export const selectIsLoading = state => state.adverts.isLoading;
 export const selectError = state => state.adverts.error;
 export const selectFilterLocation = state => state.filterLocation;
 export const selectFilterFeatures = state => state.features;
+export const selectFavorites = state => state.favorites.items;
 
 export const filteredAdvertsSelector = createSelector(
   [selectAdverts, selectFilterLocation, selectFilterFeatures],

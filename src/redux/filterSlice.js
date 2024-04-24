@@ -16,8 +16,6 @@ export const filterSlice = createSlice({
       state.filterLocation = action.payload;
     },
     setFeatures: (state, action) => {
-      console.log('action.payload setFeatures :>> ', action.payload);
-
       state.features = action.payload;
     },
   },

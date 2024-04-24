@@ -6,7 +6,15 @@ import { Button } from 'components/Button/Button';
 import { CutText, CutTitle } from 'components/CutText/CutText';
 import FeaturesInAdvertItem from 'components/Features/FeaturesInAdvertItem';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/selectors';
+import { addFavorite } from '../../redux/favoritesSlice';
+
 const AdvertItem = ({ advert, toggleShowModal }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  console.log('favorites :>> ', favorites);
+
   return (
     <li className={css.advertItem_container}>
       <img
@@ -21,11 +29,17 @@ const AdvertItem = ({ advert, toggleShowModal }) => {
         <div>
           <div className={css.advert_title}>
             <CutTitle>{advert.name}</CutTitle>
-            <div className={css.price_heart_wrapper}>
+            <div className={css.price_fav_wrapper}>
               <p>&#8364;{advert.price}</p>
-              <svg width={24} height={24}>
-                <use href={`${svgSprite}#heart`}></use>
-              </svg>
+              <button
+                type="button"
+                className={css.favorites_btn}
+                onClick={() => dispatch(addFavorite(advert._id))}
+              >
+                <svg width={24} height={24}>
+                  <use href={`${svgSprite}#heart`}></use>
+                </svg>
+              </button>
             </div>
           </div>
           <div className={css.advert_subtitle}>
