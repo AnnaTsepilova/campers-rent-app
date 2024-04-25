@@ -30,7 +30,7 @@ const Footer = () => {
           <ul className={css.social_list}>
             <li className={css.social_item}>
               <a
-                href="/catalog"
+                href="/campers-rent-app/catalog"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="facebook"
@@ -43,7 +43,7 @@ const Footer = () => {
             </li>
             <li className={css.social_item}>
               <a
-                href="/catalog"
+                href="/campers-rent-app/catalog"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="instagram"
@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
             <li className={css.social_item}>
               <a
-                href="/catalog"
+                href="/campers-rent-app/catalog"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="youtube"

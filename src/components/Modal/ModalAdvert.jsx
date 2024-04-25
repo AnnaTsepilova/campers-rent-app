@@ -27,77 +27,87 @@ const ModalAdvert = ({ advert, onModalClose }) => {
         </button>
 
         <div className={css.advert_info}>
-          <div className={css.advert_title}>
-            <h2 className={css.advert_name}>{advert.name}</h2>
-            <div className={style.advert_subtitle}>
-              <div className={style.advert_reviews}>
-                <svg width={16} height={16}>
-                  <use href={`${svgSprite}#star`}></use>
-                </svg>
-                <p>
-                  {advert.rating}({advert.reviews.length}
-                  Reviews)
-                </p>
-              </div>
-              <div className={style.advert_location}>
-                <svg width={16} height={16}>
-                  <use href={`${svgSprite}#map-pin`}></use>
-                </svg>
-                <p>{advert.location}</p>
-              </div>
-            </div>
-            <div className={css.advert_price}>
+          <h2 className={css.advert_name}>{advert.name}</h2>
+          <div className={style.advert_subtitle}>
+            <div className={style.advert_reviews}>
+              <svg width={16} height={16}>
+                <use href={`${svgSprite}#star`}></use>
+              </svg>
               <p>
-                &#8364;
-                {advert.price}
+                {advert.rating}({advert.reviews.length}
+                Reviews)
               </p>
             </div>
+            <div className={style.advert_location}>
+              <svg width={16} height={16}>
+                <use href={`${svgSprite}#map-pin`}></use>
+              </svg>
+              <p>{advert.location}</p>
+            </div>
           </div>
-
-          <ul className={style.advertItem_gallery}>
-            {advert.gallery.map(imgUrl => (
-              <li key={imgUrl}>
-                <img
-                  className={style.advertItem_img}
-                  src={imgUrl}
-                  alt={advert.name}
-                  width={290}
-                  height={310}
-                />
-              </li>
-            ))}
-          </ul>
-          <p className="text">{advert.description}</p>
+          <div className={css.advert_price}>
+            <p>
+              &#8364;
+              {advert.price}
+            </p>
+          </div>
         </div>
 
-        <div className={css.advert_details_btns}>
-          <button
-            className={`${css.advert_details_btn} subtitle_h3 ${
-              btnActive === 'features' ? css.row_accent : ''
-            }`}
-            onClick={() => setBtnActive('features')}
-          >
-            Features
-          </button>
-          <button
-            className={`${css.advert_details_btn} subtitle_h3 ${
-              btnActive === 'rewiews' ? css.row_accent : ''
-            }`}
-            onClick={() => setBtnActive('rewiews')}
-          >
-            Reviews
-          </button>
-        </div>
-        <div className={css.advert_details_wrapper}>
-          <div className={css.advert_details}>
-            {btnActive === 'features' ? <Features advert={advert} /> : <></>}
-            {btnActive === 'rewiews' ? (
-              <Reviews reviews={advert.reviews} />
-            ) : (
-              <></>
-            )}
+        <div className={css.scrollbar_container}>
+          <div className={css.list_thumb}>
+            <div className={css.content_margin_right}>
+              <ul className={style.advertItem_gallery}>
+                {advert.gallery.map(imgUrl => (
+                  <li key={imgUrl}>
+                    <img
+                      className={style.advertItem_img}
+                      src={imgUrl}
+                      alt={advert.name}
+                      width={290}
+                      height={310}
+                    />
+                  </li>
+                ))}
+              </ul>
+              <p className={`${css.advertItem_descr} text`}>
+                {advert.description}
+              </p>
+
+              <div className={css.advert_details_btns}>
+                <button
+                  className={`${css.advert_details_btn} subtitle_h3 ${
+                    btnActive === 'features' ? css.row_accent : ''
+                  }`}
+                  onClick={() => setBtnActive('features')}
+                >
+                  Features
+                </button>
+                <button
+                  className={`${css.advert_details_btn} subtitle_h3 ${
+                    btnActive === 'rewiews' ? css.row_accent : ''
+                  }`}
+                  onClick={() => setBtnActive('rewiews')}
+                >
+                  Reviews
+                </button>
+              </div>
+              <div className={css.advert_details_wrapper}>
+                <div className={css.advert_details}>
+                  {btnActive === 'features' ? (
+                    <Features advert={advert} />
+                  ) : (
+                    <></>
+                  )}
+                  {btnActive === 'rewiews' ? (
+                    <Reviews reviews={advert.reviews} />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+                <BookingForm />
+              </div>
+            </div>
           </div>
-          <BookingForm />
         </div>
       </div>
     </Modal>
