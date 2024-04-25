@@ -25,7 +25,7 @@ const FavoritesPage = () => {
   }, [dispatch]);
 
   return (
-    <main>
+    <main className="container">
       <Section>
         <div className={css.catalogPage_wrapper}>
           <SearchBar />

@@ -1,3 +1,60 @@
 .footer {
-  border-top: 1px solid var(--border-color);
+  background-color: var(--text-color);
+}
+
+.footer_wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  color: var(--white);
+}
+
+.logo_footer {
+  color: var(--white);
+}
+
+.logo_footer_svg {
+  fill: currentColor;
+}
+
+.slogan_footer {
+  color: currentColor;
+}
+
+.social_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.social_text {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.social_svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255, 0.5);
+
+  fill: currentColor;
+  background-color: transparent;
+
+  transition: background-color var(--transition-function);
+}
+
+.social_svg:hover,
+.social_svg:focus {
+  background-color: var(--accent-color);
 }

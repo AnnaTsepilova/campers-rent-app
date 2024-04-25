@@ -29,23 +29,18 @@ body {
   scrollbar-gutter: stable;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.container {
+  width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.subtitle_h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .subtitle_h3 {

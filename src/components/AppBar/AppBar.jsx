@@ -11,10 +11,10 @@ const navItems = [
 
 const AppBar = () => {
   return (
-    <header className={css.header_container}>
-      <a href="./index.html" className={css.logo_header} aria-label="Logo">
-        <svg width={40} height={29}>
-          <use href={`${svgSprite}#alcove`}></use>
+    <header className={`${css.header_container} container`}>
+      <a href="./index.html" className={css.logo} aria-label="Logo">
+        <svg width={32} height={32} className={css.logo_header}>
+          <use href={`${svgSprite}#landscape`}></use>
         </svg>
         <div className={css.slogan}>
           <span className={css.slogan_first}>

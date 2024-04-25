@@ -53,6 +53,7 @@ const ModalAdvert = ({ advert, onModalClose }) => {
               </p>
             </div>
           </div>
+
           <ul className={style.advertItem_gallery}>
             {advert.gallery.map(imgUrl => (
               <li key={imgUrl}>
