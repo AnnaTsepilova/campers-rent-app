@@ -1,4 +1,5 @@
 import css from './BookingForm.module.css';
+import svgSprite from '../../img/icons.svg';
 
 import { SubmitButton } from 'components/Button/Button';
 import { validateForm } from 'helpers/bookingFormValidation';
@@ -74,6 +75,9 @@ const BookingForm = () => {
               className={css.bookForm_input}
               required
             />
+            {/* <svg className={css.calendar_svg} width={20} height={20}>
+              <use href={`${svgSprite}#calendar`}></use>
+            </svg> */}
           </label>
 
           <label htmlFor="comment">
