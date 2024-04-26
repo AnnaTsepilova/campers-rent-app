@@ -19,13 +19,13 @@ You can also clone the project and open it in localhost.
 
 #### Installation
 
-1. Clone the repository:
+Clone the repository:
 
 ```
-git clone <repository-url>
+git clone https://github.com/AnnaTsepilova/campers-rent-app.git
 ```
 
-2. Install dependencies:
+Install dependencies:
 
 ```
 npm install
@@ -63,11 +63,11 @@ The application have the following routes:
 
 ## Technologies
 
-- Frontend: React.js, Redux Toolkit
-- Backend: [https://mockapi.io/](https://mockapi.io/)
-- Library: react-loader-spinner
-- API: Axios for HTTP requests
-- Deployment: GitHub Pages
+- **Frontend**: React.js, Redux Toolkit
+- **Backend**: [https://mockapi.io/](https://mockapi.io/)
+- **Library**: react-loader-spinner
+- **API**: Axios for HTTP requests
+- **Deployment**: GitHub Pages
 
 ## Screenshots
 
