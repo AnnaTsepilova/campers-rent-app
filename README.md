@@ -66,7 +66,7 @@ The application have the following routes:
 - **Backend**: [https://mockapi.io/](https://mockapi.io/)
 - **API**: Axios for HTTP requests
 - **Frontend**: React.js, Redux Toolkit
-- **Library**: react-loader-spinner
+- **Library**: react-loader-spinner, react-datepicker, react-toastify
 - **Deployment**: GitHub Pages
 
 ## Author

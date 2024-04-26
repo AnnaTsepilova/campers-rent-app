@@ -1,4 +1,3 @@
-// import { Scrollbars } from 'rc-scrollbars';
 import { useState } from 'react';
 
 import Modal from './Modal';

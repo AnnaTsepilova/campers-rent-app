@@ -18,7 +18,8 @@ export const validateForm = ({ name, email, bookingDate }) => {
   // Validate date
   const currentDate = new Date();
   const selectedDate = new Date(bookingDate);
-  if (selectedDate <= currentDate) {
+
+  if (!bookingDate || selectedDate <= currentDate) {
     newErrors.bookingDate = 'Booking date must be in the future';
     invalidInput(newErrors.bookingDate);
   }

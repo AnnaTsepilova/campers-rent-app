@@ -1,22 +1,30 @@
 import css from './BookingForm.module.css';
 import svgSprite from '../../img/icons.svg';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import { SubmitButton } from 'components/Button/Button';
 import { validateForm } from 'helpers/bookingFormValidation';
 import { successSubmit } from 'helpers/notifications';
+import { useState } from 'react';
 
 const BookingForm = () => {
+  const [startDate, setStartDate] = useState();
+
   const handleSubmit = event => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
 
-    const bookingData = Object.fromEntries(formData.entries());
+    let bookingData = Object.fromEntries(formData.entries());
+    bookingData = {
+      ...bookingData,
+      bookingDate: startDate?.toISOString().split('T')[0],
+    };
 
     const errors = validateForm(bookingData);
 
     if (Object.keys(errors).length === 0) {
-      console.log('form bookingData :>> ', bookingData);
       successSubmit('Your booking request has been successfully sent');
       reset(event);
     } else {
@@ -26,6 +34,7 @@ const BookingForm = () => {
 
   const reset = event => {
     event.target.reset();
+    setStartDate('');
   };
 
   return (
@@ -66,21 +75,19 @@ const BookingForm = () => {
             />
           </label>
 
-          <label htmlFor="bookingDate" className={css.calendar_input}>
-            <span className={css.datepicker_toggle_button}>
-              {' '}
-              <svg className={css.calendar_svg} width={20} height={20}>
-                <use href={`${svgSprite}#calendar`}></use>
-              </svg>
-            </span>
-            <input
-              id="bookingDate"
-              name="bookingDate"
-              type="date"
-              placeholder="Booking date"
-              className={`${css.bookForm_input} ${css.datepicker_input}`}
+          <label htmlFor="bookingDate" className={css.calendar_container}>
+            <DatePicker
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+              placeholderText="Booking date"
+              minDate={new Date()}
+              dateFormat="dd/MM/yyyy"
+              className={`${css.bookForm_input} ${css.date_input}`}
               required
             />
+            <svg className={css.calendar_svg} width={20} height={20}>
+              <use href={`${svgSprite}#calendar`}></use>
+            </svg>
           </label>
 
           <label htmlFor="comment">
@@ -92,9 +99,7 @@ const BookingForm = () => {
             ></textarea>
           </label>
         </div>
-        <SubmitButton type="submit" className={css.rent_form_button}>
-          Send
-        </SubmitButton>
+        <SubmitButton type="submit">Send</SubmitButton>
       </form>
     </div>
   );

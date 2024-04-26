@@ -16,10 +16,7 @@ const FeatureDetailsList = ({ features }) => {
         }
         if (value) {
           return (
-            <li
-              className={css.features_item}
-              key={`${key}_${Math.random(100)}`}
-            >
+            <li className={css.features_item} key={`${features._id}_${key}`}>
               <svg width={20} height={20}>
                 <use href={`${svgSprite}#${key}`}></use>
               </svg>

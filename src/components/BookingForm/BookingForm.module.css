@@ -53,57 +53,14 @@
   height: 114px;
 }
 
-.calendar_input {
+.calendar_container {
   position: relative;
-  width: 100%;
-  height: 56px;
-}
-
-.datepicker_toggle_button {
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  width: 100%;
-  height: 100%;
-}
-
-/* .datepicker_toggle_button:hover,
-.datepicker_toggle_button:focus {
-  fill: var(--primary-black);
-} */
-
-.datepicker_input {
-  height: 56px;
-
-  padding: 18px;
-
-  border: transparent;
-  border-radius: 10px;
-  background: var(--input-bg-color);
-  outline: transparent;
-
-  color: var(--label);
-
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
-  box-sizing: border-box;
+  width: 100%;
 }
 
-.datepicker_input::-webkit-calendar-picker-indicator {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  cursor: pointer;
+.date_input {
+  width: 398px;
 }
 
 .calendar_svg {
@@ -113,9 +70,8 @@
   transform: translateY(-50%);
 
   fill: var(--label);
-  z-index: 2;
 }
 
-.calendar_input:focus + .calendar_svg {
-  fill: var(--primary-black);
+.rent_form_button {
+  width: 160px;
 }

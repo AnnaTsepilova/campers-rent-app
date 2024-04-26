@@ -24,11 +24,6 @@ body {
   color: var(--primary-black);
 }
 
-html,
-body {
-  scrollbar-gutter: stable;
-}
-
 .container {
   width: var(--container);
   margin-left: auto;
