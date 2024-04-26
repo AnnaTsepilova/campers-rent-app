@@ -1,5 +1,4 @@
 import css from './BookingForm.module.css';
-// import svgSprite from '../../img/icons.svg';
 
 import { SubmitButton } from 'components/Button/Button';
 import { validateForm } from 'helpers/bookingFormValidation';
@@ -51,8 +50,6 @@ const BookingForm = () => {
               placeholder="Name"
               autoComplete="auto"
               className={css.bookForm_input}
-              // value="name"
-              // onChange={handleChange}
               required
             />
           </label>
@@ -64,8 +61,6 @@ const BookingForm = () => {
               placeholder="Email"
               autoComplete="auto"
               className={css.bookForm_input}
-              // value={email}
-              // onChange={handleChange}
               required
             />
           </label>
@@ -77,13 +72,8 @@ const BookingForm = () => {
               type="date"
               placeholder="Booking date"
               className={css.bookForm_input}
-              // value={bookingDate}
-              // onChange={handleChange}
               required
             />
-            {/* <svg className={css.calendar_svg} width={20} height={20}>
-              <use href={`${svgSprite}#calendar`}></use>
-            </svg> */}
           </label>
 
           <label htmlFor="comment">
@@ -92,8 +82,6 @@ const BookingForm = () => {
               name="comment"
               placeholder="Comment"
               className={css.bookForm_textarea}
-              // value={comment}
-              // onChange={handleChange}
             ></textarea>
           </label>
         </div>
