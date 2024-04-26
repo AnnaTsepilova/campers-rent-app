@@ -3,7 +3,7 @@ import styles from '../SearchBar/SearchBar.module.css';
 import cssTitle from '../Features/Features.module.css';
 import svgSprite from '../../img/icons.svg';
 
-import { SubmitButton } from 'components/Button/Button';
+import { ResetBtn, SubmitButton } from 'components/Button/Button';
 
 import { useDispatch } from 'react-redux';
 import { setFeatures } from '../../redux/filterSlice';
@@ -23,7 +23,18 @@ const Filters = () => {
       .filter(([key]) => key === 'type')
       .map(type => type[1]);
 
+    event.target.reset();
+
     dispatch(setFeatures({ equipment, type }));
+  }
+
+  function onResetBtnClick() {
+    dispatch(
+      setFeatures({
+        equipment: [],
+        type: [],
+      })
+    );
   }
 
   return (
@@ -150,7 +161,10 @@ const Filters = () => {
           </label>
         </fieldset>
       </div>
-      <SubmitButton type="submit">Search</SubmitButton>
+      <div className={css.btns_set}>
+        <SubmitButton>Search</SubmitButton>
+        <ResetBtn onClick={onResetBtnClick} />
+      </div>
     </form>
   );
 };

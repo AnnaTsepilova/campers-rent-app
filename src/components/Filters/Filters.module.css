@@ -74,3 +74,8 @@
   height: 28px;
   fill: var(--primary-black);
 }
+
+.btns_set {
+  display: flex;
+  gap: 24px;
+}
