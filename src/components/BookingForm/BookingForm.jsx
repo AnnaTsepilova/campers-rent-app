@@ -1,49 +1,31 @@
-import { useState } from 'react';
-
 import css from './BookingForm.module.css';
 // import svgSprite from '../../img/icons.svg';
 
 import { SubmitButton } from 'components/Button/Button';
-import { validateForm } from 'helpers/BookingFormValidation';
+import { validateForm } from 'helpers/bookingFormValidation';
 import { successSubmit } from 'helpers/notifications';
 
-const INITIAL_STATE = {
-  name: '',
-  email: '',
-  bookingDate: '',
-  comment: '',
-};
-
 const BookingForm = () => {
-  const [formData, setFormData] = useState(INITIAL_STATE);
-
-  const { name, email, bookingDate, comment } = formData;
-
-  const handleChange = event => {
-    const { name, value } = event.target;
-
-    setFormData({ ...formData, [name]: value });
-    console.log('event :>> ', formData);
-  };
-
   const handleSubmit = event => {
     event.preventDefault();
 
-    const errors = validateForm(formData);
+    const formData = new FormData(event.target);
+
+    const bookingData = Object.fromEntries(Array.from(formData.entries()));
+
+    const errors = validateForm(bookingData);
 
     if (Object.keys(errors).length === 0) {
-      console.log(formData);
+      console.log('form bookingData :>> ', bookingData);
       successSubmit('Your booking request has been successfully sent');
-      reset();
+      reset(event);
     } else {
-      console.log('Form is invalid', errors);
+      console.log('Form is invalid :>> ', errors);
     }
-
-    reset();
   };
 
-  const reset = () => {
-    setFormData(INITIAL_STATE);
+  const reset = event => {
+    event.target.reset();
   };
 
   return (
@@ -63,36 +45,40 @@ const BookingForm = () => {
         <div className={css.bookForm_inputs}>
           <label htmlFor="name">
             <input
+              id="name"
               name="name"
               type="text"
               placeholder="Name"
-              autoComplete="off"
+              autoComplete="auto"
               className={css.bookForm_input}
-              value={name}
-              onChange={handleChange}
+              // value="name"
+              // onChange={handleChange}
               required
             />
           </label>
           <label htmlFor="email">
             <input
+              id="email"
               name="email"
               type="email"
               placeholder="Email"
+              autoComplete="auto"
               className={css.bookForm_input}
-              value={email}
-              onChange={handleChange}
+              // value={email}
+              // onChange={handleChange}
               required
             />
           </label>
 
           <label htmlFor="bookingDate" className={css.calendar_input}>
             <input
+              id="bookingDate"
               name="bookingDate"
               type="date"
               placeholder="Booking date"
               className={css.bookForm_input}
-              value={bookingDate}
-              onChange={handleChange}
+              // value={bookingDate}
+              // onChange={handleChange}
               required
             />
             {/* <svg className={css.calendar_svg} width={20} height={20}>
@@ -102,11 +88,12 @@ const BookingForm = () => {
 
           <label htmlFor="comment">
             <textarea
+              id="comment"
               name="comment"
               placeholder="Comment"
               className={css.bookForm_textarea}
-              value={comment}
-              onChange={handleChange}
+              // value={comment}
+              // onChange={handleChange}
             ></textarea>
           </label>
         </div>

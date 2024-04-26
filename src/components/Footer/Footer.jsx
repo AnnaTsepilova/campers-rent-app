@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className={css.footer}>
       <div className={`${css.footer_wrapper} container`}>
         <a
-          href="./index.html"
+          href="/campers-rent-app"
           className={`${styles.logo} ${css.logo_footer}`}
           aria-label="Logo"
         >

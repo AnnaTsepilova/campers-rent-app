@@ -12,7 +12,7 @@ const navItems = [
 const AppBar = () => {
   return (
     <header className={`${css.header_container} container`}>
-      <a href="./index.html" className={css.logo} aria-label="Logo">
+      <a href="/campers-rent-app" className={css.logo} aria-label="Logo">
         <svg width={32} height={32} className={css.logo_header}>
           <use href={`${svgSprite}#landscape`}></use>
         </svg>

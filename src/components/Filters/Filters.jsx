@@ -36,9 +36,9 @@ const Filters = () => {
           Vehicle equipment
         </h3>
         <fieldset className={css.group_wrapper}>
-          <label className={css.equipment_label} htmlFor="equipment">
+          <label className={css.equipment_label} htmlFor="airConditioner">
             <input
-              id="equipment"
+              id="airConditioner"
               type="checkbox"
               name="equipment"
               value="airConditioner"
@@ -49,8 +49,9 @@ const Filters = () => {
             </svg>
             AC
           </label>
-          <label className={css.equipment_label} htmlFor="equipment">
+          <label className={css.equipment_label} htmlFor="transmission">
             <input
+              id="transmission"
               type="checkbox"
               name="equipment"
               value="transmission"
@@ -61,8 +62,9 @@ const Filters = () => {
             </svg>
             Automatic
           </label>
-          <label className={css.equipment_label} htmlFor="equipment">
+          <label className={css.equipment_label} htmlFor="kitchen">
             <input
+              id="kitchen"
               type="checkbox"
               name="equipment"
               value="kitchen"
@@ -73,8 +75,9 @@ const Filters = () => {
             </svg>
             Kitchen
           </label>
-          <label className={css.equipment_label} htmlFor="equipment">
+          <label className={css.equipment_label} htmlFor="tv">
             <input
+              id="tv"
               type="checkbox"
               name="equipment"
               value="TV"
@@ -85,8 +88,9 @@ const Filters = () => {
             </svg>
             TV
           </label>
-          <label className={css.equipment_label} htmlFor="equipment">
+          <label className={css.equipment_label} htmlFor="shower">
             <input
+              id="shower"
               type="checkbox"
               name="equipment"
               value="shower"
@@ -105,9 +109,9 @@ const Filters = () => {
           Vehicle type
         </h3>
         <fieldset className={css.group_wrapper_type}>
-          <label className={css.type_label} htmlFor="type">
+          <label className={css.type_label} htmlFor="panelTruck">
             <input
-              id="type"
+              id="panelTruck"
               type="radio"
               name="type"
               value="panelTruck"
@@ -118,8 +122,9 @@ const Filters = () => {
             </svg>
             Van
           </label>
-          <label className={css.type_label} htmlFor="type">
+          <label className={css.type_label} htmlFor="fullyIntegrated">
             <input
+              id="fullyIntegrated"
               type="radio"
               name="type"
               value="fullyIntegrated"
@@ -130,8 +135,9 @@ const Filters = () => {
             </svg>
             Fully Integrated
           </label>
-          <label className={css.type_label} htmlFor="type">
+          <label className={css.type_label} htmlFor="alcove">
             <input
+              id="alcove"
               type="radio"
               name="type"
               value="alcove"

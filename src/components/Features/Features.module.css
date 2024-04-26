@@ -30,7 +30,7 @@
   justify-content: space-between;
 }
 
-.vehicle_item h3 {
+.vehicle_item p {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33;
