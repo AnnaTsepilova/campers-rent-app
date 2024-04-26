@@ -71,6 +71,11 @@ The application have the following routes:
 
 ## Screenshots
 
+Home page
 ![HomePageScreencapture](./assets/your-best-campers-rent_home-page.png)
+
+Catalog Page
 ![CatalogPageScreencapture](./assets/your-best-campers-rent_catalog-page.png)
+
+Favorites Page
 ![FavoritesPageScreencapture](./assets/your-best-campers-rent_favorites-page.png)
