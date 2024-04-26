@@ -85,6 +85,7 @@ const BookingForm = () => {
               minDate={new Date()}
               dateFormat="dd/MM/yyyy"
               className={`${css.bookForm_input} ${css.date_input}`}
+              formatWeekDay={nameOfDay => nameOfDay.slice(0, 3)}
               required
             />
             <svg className={css.calendar_svg} width={20} height={20}>
