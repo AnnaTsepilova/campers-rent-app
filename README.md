@@ -71,7 +71,7 @@ The application have the following routes:
 
 ## Author
 
-**Anna Tsepilova** - [AnnaTsepilova](https://github.com/AnnaTsepilova)
+**Anna Tsepilova** - [GitHub](https://github.com/AnnaTsepilova)
 
 ## Screenshots
 
