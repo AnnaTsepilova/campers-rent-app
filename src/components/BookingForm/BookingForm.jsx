@@ -11,7 +11,7 @@ const BookingForm = () => {
 
     const formData = new FormData(event.target);
 
-    const bookingData = Object.fromEntries(Array.from(formData.entries()));
+    const bookingData = Object.fromEntries(formData.entries());
 
     const errors = validateForm(bookingData);
 
@@ -67,17 +67,20 @@ const BookingForm = () => {
           </label>
 
           <label htmlFor="bookingDate" className={css.calendar_input}>
+            <span className={css.datepicker_toggle_button}>
+              {' '}
+              <svg className={css.calendar_svg} width={20} height={20}>
+                <use href={`${svgSprite}#calendar`}></use>
+              </svg>
+            </span>
             <input
               id="bookingDate"
               name="bookingDate"
               type="date"
               placeholder="Booking date"
-              className={css.bookForm_input}
+              className={`${css.bookForm_input} ${css.datepicker_input}`}
               required
             />
-            {/* <svg className={css.calendar_svg} width={20} height={20}>
-              <use href={`${svgSprite}#calendar`}></use>
-            </svg> */}
           </label>
 
           <label htmlFor="comment">

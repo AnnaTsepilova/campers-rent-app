@@ -48,7 +48,7 @@ const ModalAdvert = ({ advert, onModalClose }) => {
           <div className={css.advert_price}>
             <p>
               &#8364;
-              {advert.price}
+              {advert.price.toFixed()}
             </p>
           </div>
         </div>

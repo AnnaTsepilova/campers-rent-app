@@ -27,7 +27,7 @@ const AdvertItem = ({ advert, toggleShowModal, isFavorite = false }) => {
           <div className={css.advert_title}>
             <CutTitle>{advert.name}</CutTitle>
             <div className={css.price_fav_wrapper}>
-              <p>&#8364;{advert.price}</p>
+              <p>&#8364;{advert.price.toFixed()}</p>
               <button
                 type="button"
                 className={css.favorites_btn}
