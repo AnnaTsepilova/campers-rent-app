@@ -63,10 +63,10 @@ The application have the following routes:
 
 ## Technologies
 
-- **Frontend**: React.js, Redux Toolkit
 - **Backend**: [https://mockapi.io/](https://mockapi.io/)
-- **Library**: react-loader-spinner
 - **API**: Axios for HTTP requests
+- **Frontend**: React.js, Redux Toolkit
+- **Library**: react-loader-spinner
 - **Deployment**: GitHub Pages
 
 ## Screenshots
