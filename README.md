@@ -6,7 +6,7 @@ catalog. Use the search and filter features to locate camper vans that meet your
 requirements, and save your preferred options to your favorites list for
 convenient access later.
 
-## Usage
+## Demo
 
 ### Live view
 
@@ -71,11 +71,14 @@ The application have the following routes:
 
 ## Screenshots
 
-Home page
+### Home page
+
 ![HomePageScreencapture](./assets/your-best-campers-rent_home-page.png)
 
-Catalog Page
+### Catalog Page
+
 ![CatalogPageScreencapture](./assets/your-best-campers-rent_catalog-page.png)
 
-Favorites Page
+### Favorites Page
+
 ![FavoritesPageScreencapture](./assets/your-best-campers-rent_favorites-page.png)
