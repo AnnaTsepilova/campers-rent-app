@@ -69,6 +69,10 @@ The application have the following routes:
 - **Library**: react-loader-spinner
 - **Deployment**: GitHub Pages
 
+## Author
+
+**Anna Tsepilova** - [AnnaTsepilova](https://github.com/AnnaTsepilova)
+
 ## Screenshots
 
 ### Home page
